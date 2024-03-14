@@ -61,11 +61,11 @@ export function NewPassword(formValues) {
       .then(function (response) {
         console.log(response);
         dispatch(
-          slice.actions.logIn({
-            isLoggedIn: true,
-            token: response.data.token,
-          })
-        );
+            slice.actions.logIn({
+              isLoggedIn: true,
+              token: response.data.token,
+            })
+          );
         dispatch(
           showSnackbar({ severity: "success", message: response.data.message })
         );
@@ -146,7 +146,6 @@ export function LoginUser(formValues) {
             user_id: response.data.user_id,
           })
         );
-
         window.localStorage.setItem("user_id", response.data.user_id);
         dispatch(
           showSnackbar({ severity: "success", message: response.data.message })
@@ -168,7 +167,6 @@ export function LoginUser(formValues) {
 export function LogoutUser() {
   return async (dispatch, getState) => {
     window.localStorage.removeItem("user_id");
-
     dispatch(slice.actions.signOut());
   };
 }
@@ -244,7 +242,7 @@ export function VerifyEmail(formValues) {
           })
         );
 
-        window.localStorage.setItem("user_id", response.data.user_id);
+
         dispatch(
           showSnackbar({ severity: "success", message: response.data.message })
         );

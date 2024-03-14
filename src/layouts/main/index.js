@@ -2,7 +2,7 @@ import { Container, Stack } from "@mui/material";
 import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
-import Logo from "../../assets/Images/logo_udeg_color.png";
+import Logo from "../../assets/Images/logo.ico";
 import { useSelector } from "react-redux";
 
 
@@ -16,14 +16,13 @@ const MainLayout = () => {
   return (
     <>
       <Container sx={{ mt: 5 }} maxWidth="sm">
-        <Stack spacing={5} p={4}>
+        <Stack spacing={5}>
           <Stack
             sx={{ width: "100%" }}
             direction={"column"}
             alignItems={"center"}
-            
           >
-            <img style={{ height: 120, width: 100 }} src={Logo} alt="logo" />
+            <img style={{ height: 120, width: 120 }} src={Logo} alt="logo" />
           </Stack>
         </Stack>
         
