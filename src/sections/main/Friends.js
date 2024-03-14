@@ -86,7 +86,7 @@ const Friends = ({ open, handleClose }) => {
       maxWidth="xs"
       open={open}
       TransitionComponent={Transition}
-      keepMounted
+      // keepMounted
       onClose={handleClose}
       aria-describedby="alert-dialog-slide-description"
       sx={{ p: 4 }}
@@ -102,21 +102,21 @@ const Friends = ({ open, handleClose }) => {
       <DialogContent>
         <Stack sx={{ height: "100%" }}>
           <Stack spacing={2.4}>
-            {(() => {
-              switch (value) {
-                case 0: // display all users in this list
-                  return <UsersList />;
+          {/* {(() => {
+            switch (value) {
+              case 0: // display all users in this list
+                return <UsersList />;
 
-                case 1: // display friends in this list
-                  return <FriendsList />;
+              case 1: // display friends in this list
+                return <FriendsList />;
 
-                case 2: // display request in this list
-                  return <RequestsList />;
+              case 2: // display request in this list
+                return <RequestsList />;
 
-                default:
-                  break;
-              }
-            })()}
+              default:
+                break;
+            }
+          })()} */}
           </Stack>
         </Stack>
       </DialogContent>
