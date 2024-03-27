@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Dialog, DialogContent, Slide, Stack, Tab, Tabs } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -25,7 +25,6 @@ const UsersList = () => {
     dispatch(FetchUsers());
   }, []);
 
-
   return (
     <>
       {users.map((el, idx) => {
@@ -39,12 +38,11 @@ const UsersList = () => {
 const FriendsList = () => {
   const dispatch = useDispatch();
 
+  const { friends } = useSelector((state) => state.app);
 
   useEffect(() => {
     dispatch(FetchFriends());
   }, []);
-  const { friends } = useSelector((state) => state.app);
-
 
   return (
     <>
@@ -59,13 +57,11 @@ const FriendsList = () => {
 const RequestsList = () => {
   const dispatch = useDispatch();
 
+  const { friendRequests } = useSelector((state) => state.app);
 
   useEffect(() => {
     dispatch(FetchFriendRequests());
   }, []);
-
-  const { friendRequests } = useSelector((state) => state.app);
-
 
   return (
     <>
@@ -78,7 +74,7 @@ const RequestsList = () => {
 };
 
 const Friends = ({ open, handleClose }) => {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -90,7 +86,7 @@ const Friends = ({ open, handleClose }) => {
       maxWidth="xs"
       open={open}
       TransitionComponent={Transition}
-      // keepMounted
+      keepMounted
       onClose={handleClose}
       aria-describedby="alert-dialog-slide-description"
       sx={{ p: 4 }}
@@ -106,22 +102,21 @@ const Friends = ({ open, handleClose }) => {
       <DialogContent>
         <Stack sx={{ height: "100%" }}>
           <Stack spacing={2.4}>
-            {/* {(() => {
+            {(() => {
               switch (value) {
                 case 0: // display all users in this list
                   return <UsersList />;
-                  // break;
+
                 case 1: // display friends in this list
                   return <FriendsList />;
-                  // break;
+
                 case 2: // display request in this list
-                 return <RequestsList />;
-                //  break;
+                  return <RequestsList />;
 
                 default:
                   break;
               }
-            })()} */}
+            })()}
           </Stack>
         </Stack>
       </DialogContent>
