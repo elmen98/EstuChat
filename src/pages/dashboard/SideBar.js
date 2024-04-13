@@ -16,7 +16,7 @@ import { Gear } from "phosphor-react";
 import { Nav_Buttons, Profile_Menu } from "../../data";
 import useSettings from "../../hooks/useSettings";
 import { faker } from "@faker-js/faker";
-import Logo from "../../assets/Images/logo.ico";
+import Logo from "../../assets/Images/logo_udeg_color.png";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { LogoutUser } from "../../redux/slices/auth";
@@ -97,8 +97,12 @@ const SideBar = () => {
               width: 64,
               borderRadius: 1.5,
             }}
+            
           >
-            <img src={Logo} alt={"Chat app logo"} />
+            <Stack alignItems={"center"}>
+            <img src={Logo} alt={"Chat app logo"} width="50" height="60" />
+
+            </Stack>
           </Box>
           <Stack
             sx={{ width: "max-content" }}

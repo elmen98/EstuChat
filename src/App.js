@@ -21,9 +21,9 @@ const Alert = React.forwardRef((props, ref) => (
 function App() {
   const dispatch = useDispatch();
 
-  // const { severity, message, open } = useSelector(
-  //   (state) => state.app.snackbar
-  // );
+  const { severity, message, open } = useSelector(
+    (state) => state.app.snackbar
+  );
 
   return (
     <>
@@ -34,7 +34,7 @@ function App() {
         </ThemeSettings>
       </ThemeProvider>
 
-      {/* {message && open ? (
+      {message && open ? (
         <Snackbar
           anchorOrigin={{ vertical, horizontal }}
           open={open}
@@ -58,7 +58,7 @@ function App() {
         </Snackbar>
       ) : (
         <></>
-      )} */}
+      )}
     </>
   );
 }

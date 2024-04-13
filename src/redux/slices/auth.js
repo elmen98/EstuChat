@@ -61,11 +61,11 @@ export function NewPassword(formValues) {
       .then(function (response) {
         console.log(response);
         dispatch(
-            slice.actions.logIn({
-              isLoggedIn: true,
-              token: response.data.token,
-            })
-          );
+          slice.actions.logIn({
+            isLoggedIn: true,
+            token: response.data.token,
+          })
+        );
         dispatch(
           showSnackbar({ severity: "success", message: response.data.message })
         );
@@ -146,6 +146,7 @@ export function LoginUser(formValues) {
             user_id: response.data.user_id,
           })
         );
+
         window.localStorage.setItem("user_id", response.data.user_id);
         dispatch(
           showSnackbar({ severity: "success", message: response.data.message })
@@ -167,6 +168,7 @@ export function LoginUser(formValues) {
 export function LogoutUser() {
   return async (dispatch, getState) => {
     window.localStorage.removeItem("user_id");
+
     dispatch(slice.actions.signOut());
   };
 }
@@ -189,9 +191,9 @@ export function RegisterUser(formValues) {
       )
       .then(function (response) {
         console.log(response);
-        // dispatch(
-        //   slice.actions.updateRegisterEmail({ email: formValues.email })
-        // );
+        dispatch(
+          slice.actions.updateRegisterEmail({ email: formValues.email })
+        );
 
         dispatch(
           showSnackbar({ severity: "success", message: response.data.message })
@@ -203,9 +205,9 @@ export function RegisterUser(formValues) {
       .catch(function (error) {
         console.log(error);
         dispatch(showSnackbar({ severity: "error", message: error.message }));
-        // dispatch(
-        //   slice.actions.updateIsLoading({ error: true, isLoading: false })
-        // );
+        dispatch(
+          slice.actions.updateIsLoading({ error: true, isLoading: false })
+        );
       })
       .finally(() => {
         if (!getState().auth.error) {
@@ -233,7 +235,7 @@ export function VerifyEmail(formValues) {
       )
       .then(function (response) {
         console.log(response);
-        // dispatch(slice.actions.updateRegisterEmail({ email: "" }));
+        dispatch(slice.actions.updateRegisterEmail({ email: "" }));
         window.localStorage.setItem("user_id", response.data.user_id);
         dispatch(
           slice.actions.logIn({
@@ -242,7 +244,7 @@ export function VerifyEmail(formValues) {
           })
         );
 
-
+        window.localStorage.setItem("user_id", response.data.user_id);
         dispatch(
           showSnackbar({ severity: "success", message: response.data.message })
         );

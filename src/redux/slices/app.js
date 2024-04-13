@@ -124,8 +124,7 @@ export function UpdateTab(tab) {
 
 export function FetchUsers() {
   return async (dispatch, getState) => {
-    await axios
-      .get(
+    await axios.get(
         "/user/get-users",
 
         {
@@ -213,11 +212,11 @@ export function FetchFriendRequests() {
   };
 }
 
-// export const SelectConversation = ({ room_id }) => {
-//   return async (dispatch, getState) => {
-//     dispatch(slice.actions.selectConversation({ room_id }));
-//   };
-// };
+export const SelectConversation = ({ room_id }) => {
+  return async (dispatch, getState) => {
+    dispatch(slice.actions.selectConversation({ room_id }));
+  };
+};
 
 // export const FetchCallLogs = () => {
 //   return async (dispatch, getState) => {
@@ -268,9 +267,9 @@ export function FetchFriendRequests() {
 //         async (_err, presignedURL) => {
 //           await fetch(presignedURL, {
 //             method: "PUT",
-  
+
 //             body: file,
-  
+
 //             headers: {
 //               "Content-Type": file.type,
 //             },
@@ -281,8 +280,6 @@ export function FetchFriendRequests() {
 //     catch(error) {
 //       console.log(error);
 //     }
-
-    
 
 //     axios
 //       .patch(
