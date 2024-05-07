@@ -21,7 +21,7 @@ app.get("/", (req, res) => res.send("Express on Vercel"));
 
 app.use(
     cors({
-      origin: "https://deploy-mern-1whq.vercer.app",
+      origin: "https://estu-chat-frontend.vercel.app",
   
       methods: ["GET", "PATCH", "POST", "DELETE", "PUT"],
   

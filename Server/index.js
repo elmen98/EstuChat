@@ -22,7 +22,7 @@ const OneToOneMessage = require("./models/OneToOneMessage");
 
 const io = new Server(server, {
   cors: {
-    origin: "https://deploy-mern-1whq.vercer.app",
+    origin: "https://estu-chat-frontend.vercel.app",
     methods: ["GET", "POST"],
     credentials: true
   },
