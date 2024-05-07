@@ -25,7 +25,9 @@ app.use(
   
       methods: ["GET", "PATCH", "POST", "DELETE", "PUT"],
   
-      credentials: true, //
+      credentials: true, 
+      allowedHeaders: ["Access-Control-Allow-Origin"],
+
   
       //   Access-Control-Allow-Credentials is a header that, when set to true , tells browsers to expose the response to the frontend JavaScript code. The credentials consist of cookies, authorization headers, and TLS client certificates.
     })
