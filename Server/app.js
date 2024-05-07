@@ -21,7 +21,7 @@ app.get("/", (req, res) => res.send("Express on Vercel"));
 
 app.use(
     cors({
-      origin: "https://estu-chat-frontend.vercel.app",
+      origin: "https://estu-chat-frontend.vercel.app/auth/login",
   
       methods: ["GET", "PATCH", "POST", "DELETE", "PUT"],
   
