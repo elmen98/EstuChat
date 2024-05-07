@@ -22,8 +22,9 @@ const OneToOneMessage = require("./models/OneToOneMessage");
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://deploy-mern-1whq.vercer.app",
     methods: ["GET", "POST"],
+    credentials: true
   },
 });
 
