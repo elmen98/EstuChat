@@ -2,7 +2,7 @@ import { Container, Stack } from "@mui/material";
 import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
-import Logo from "../../assets/Images/logo_udeg_color.png";
+import Logo from "../../assets/Images/EstuChat_transparent.png";
 import { useSelector } from "react-redux";
 
 
@@ -23,7 +23,7 @@ const MainLayout = () => {
             alignItems={"center"}
             
           >
-            <img style={{ height: 120, width: 100 }} src={Logo} alt="logo" />
+            <img style={{ height: 220, width: 200 }} src={Logo} alt="logo" />
           </Stack>
         </Stack>
         
