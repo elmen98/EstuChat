@@ -16,9 +16,13 @@ const cors = require("cors");
 
 const app = express();
 
+app.get("/", (req, res) => res.send("Express on Vercel"));
+
+app.listen(3000, () => console.log("Server ready on port 3000."));
+
 app.use(
     cors({
-      origin: "*",
+      origin: "https://deploy-mern-1whq.vercer.app",
   
       methods: ["GET", "PATCH", "POST", "DELETE", "PUT"],
   
