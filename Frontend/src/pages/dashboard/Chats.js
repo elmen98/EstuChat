@@ -168,6 +168,15 @@ function Chats() {
       {openDialog && (
         <Friends open={openDialog} handleClose={handleCloseDialog} />
       )}
+        <Box>
+        <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="EstuChatV1"
+  agent-id="cc9a2eb2-0412-48f7-8f1a-051144140d61"
+  language-code="es"
+></df-messenger>
+        </Box>
     </>
   );
 }
