@@ -71,10 +71,10 @@ function Chats() {
   const {conversations} = useSelector((state) => state.conversation.direct_chat);
   
   useEffect(() => {
+    console.log("User ID before send:", user_id);
+  
     socket.emit("get_direct_conversations", { user_id }, (data) => {
-      console.log(data); // this data is the list of conversations
-      // dispatch action
-
+      console.log("Data received: ", data);
       dispatch(FetchDirectConversations({ conversations: data }));
     });
   }, []);
