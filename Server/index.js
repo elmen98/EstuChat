@@ -24,7 +24,8 @@ const io = new Server(server, {
   cors: {
     origin: "https://estu-chat-frontend.vercel.app",
     methods: ["GET", "POST"],
-    credentials: true
+    credentials: true,
+    allowedHeaders: ["Access-Control-Allow-Origin"]
   },
 });
 
